@@ -6,11 +6,11 @@ void *ft_memccpy(void *dest, const void *src, int c, size_t n);
 
 int		main(void)
 {
-	const char src[] = "";
+	const char src[] = "hilmiyilmaz";
 	char dest[] = "123456789";
-	const char src1[] = "";
+	const char src1[] = "hilmiyilmaz";
 	char dest1[] = "123456789";
-	int c = 'z';
+	int c = 'm';
 	size_t n = 10;
 
 	char *result;
