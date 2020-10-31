@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strncmp.c                                       :+:    :+:            */
+/*   ft_atoi.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/30 15:02:45 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/10/30 15:54:05 by hyilmaz       ########   odam.nl         */
+/*   Created: 2020/10/31 10:24:30 by hyilmaz       #+#    #+#                 */
+/*   Updated: 2020/10/31 10:54:04 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdio.h>
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+static char *ft_check_sign(const char *nptr);
+
+int		ft_atoi(const char *nptr)
 {
-	size_t i;
+	char *char_nb;
+	int nb = 1;
 
-	i = 0;
-	while (i < n)
-	{
-		if (*(s1 + i) != *(s2 + i))
-			return (*(s1 + i) - *(s2 + i));
-		i++;
+	char_nb = ft_check_sign(nptr);
+	printf("char_nb = %s\n", char_nb);
+	return (nb);
+}
+
+static char *ft_check_sign(const char *nptr)
+{
+	if (!(*nptr >= '0' && *nptr <= '9'))
+	{	
+		if (*nptr != '-' && *nptr != '+')
+		{
+			return (0);
+		}
+		else
+			return 
 	}
-	return (0);
+	else
+		return ((char*)nptr + 1);
 }

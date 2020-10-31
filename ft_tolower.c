@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strncmp.c                                       :+:    :+:            */
+/*   ft_tolower.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/30 15:02:45 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/10/30 15:54:05 by hyilmaz       ########   odam.nl         */
+/*   Created: 2020/10/31 12:09:50 by hyilmaz       #+#    #+#                 */
+/*   Updated: 2020/10/31 12:14:19 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int		ft_tolower(int c)
 {
-	size_t i;
-
-	i = 0;
-	while (i < n)
-	{
-		if (*(s1 + i) != *(s2 + i))
-			return (*(s1 + i) - *(s2 + i));
-		i++;
-	}
-	return (0);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	else
+		return (c);
 }

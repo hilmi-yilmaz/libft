@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strncmp.c                                       :+:    :+:            */
+/*   ft_isdigit.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/30 15:02:45 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/10/30 15:54:05 by hyilmaz       ########   odam.nl         */
+/*   Created: 2020/10/31 11:08:36 by hyilmaz       #+#    #+#                 */
+/*   Updated: 2020/10/31 11:12:34 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int		ft_isdigit(int c)
 {
-	size_t i;
-
-	i = 0;
-	while (i < n)
-	{
-		if (*(s1 + i) != *(s2 + i))
-			return (*(s1 + i) - *(s2 + i));
-		i++;
-	}
-	return (0);
+	if (c >= '0' && c <= '9')
+		return (2048);
+	else
+		return (0);
 }
