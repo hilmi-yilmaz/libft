@@ -6,7 +6,7 @@ int		ft_atoi(const char *nptr);
 
 int		main(void)
 {
-	char str[] = "6";
+	char str[] = " -671a12";
 	int c_result;
 	int own_result;
 
