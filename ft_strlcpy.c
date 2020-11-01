@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/29 23:51:25 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/10/30 11:35:22 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/01 12:24:07 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,16 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	i = 0;
 	len_src = ft_strlen(src);
-	while ((i < size - 1) && *(src + i) != '\0')
+	if (size == 0)
+		return (len_src);
+	else
 	{
-		*(dst + i) = *(src + i);
-		i++;
+		while ((i < size - 1) && *(src + i) != '\0')
+		{
+			*(dst + i) = *(src + i);
+			i++;
+		}
+		*(dst + i) = '\0';
+		return (len_src);
 	}
-	*(dst + i) = '\0';
-	return (len_src);
 }

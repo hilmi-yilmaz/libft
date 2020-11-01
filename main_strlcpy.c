@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <string.h>
-#include <bsd/string.h>
+//#include <bsd/string.h>
 
 size_t ft_strlcpy(char *dst, const char *src, size_t size);
 
 int		main(void)
 {
-	char dest[] = "123456789";
-	char dest1[] = "123456789";
-	const char src[] = "";
-	size_t size = 5;
+	char dest[1];
+	char dest1[1];
+	const char src[] = "123";
+	size_t size = 1;
 	size_t c_result;
 	size_t own_result;
 	
