@@ -6,12 +6,12 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 17:07:34 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/02 20:19:18 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/03 19:33:17 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
+#ifndef			LIBFT_H
+#define			LIBFT_H
 
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_bzero(void *s, size_t n);
