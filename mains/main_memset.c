@@ -37,5 +37,12 @@ int		main(void)
 	//printf("sizeof(long) = %lu bytes\n", sizeof(long));
 
 
+	/* CHECK OUTPUT WITH NULL AS INPUT */
+	char *str2;
+	str2 = NULL;
+
+	memset(str2, c, n);
+	printf("NULL as input: %s\n", str2);
+
 	return (0);
 }
