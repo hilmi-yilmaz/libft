@@ -1,5 +1,22 @@
-libft: ft_atoi.o ft_calloc.o
-	gcc -o $@ $^
+NAME = libft.a
+HEADER_FILE = libft.h
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
 
-ft_atoi.o: ft_atoi.c
-	gcc -Wall -Wextra -Werror -o $@ $<	
+all: $(NAME)
+
+$(NAME): *.o
+	ar cr $@ $^
+
+%.o: %.c $(HEADER_FILE)
+	$(CC) $(CFLAGS) -c *.c
+
+clean:
+	rm -f *.o
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
