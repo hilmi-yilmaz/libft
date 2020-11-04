@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strdup.c                                        :+:    :+:            */
+/*   ft_strmapi.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
+/*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/01 15:16:24 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/04 16:19:49 by hyilmaz       ########   odam.nl         */
+/*   Created: 2020/11/04 17:03:24 by hyilmaz       #+#    #+#                 */
+/*   Updated: 2020/11/04 18:50:53 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,22 @@
 
 size_t	ft_strlen(const char *s);
 
-char	*ft_strdup(const char *s1)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	len_s1;
-	char	*copy;
+	size_t	len_s;
 	size_t	i;
+	char	*mapped_str;
 
-	len_s1 = ft_strlen(s1) + 1;
-	copy = (char*)malloc(len_s1 * sizeof(char));
+	len_s = ft_strlen(s);
 	i = 0;
-	if (copy == NULL)
+	mapped_str = (char*)malloc(len_s + 1);
+	if (mapped_str == NULL)
 		return (NULL);
-	else
+	while (i < len_s)
 	{
-		while (i < len_s1)
-		{
-			*(copy + i) = *(s1 + i);
-			i++;
-		}
-		return (copy);
+		*(mapped_str + i) = (*f)(32, *(s + i));
+		i++;
 	}
+	*(mapped_str + i) = '\0';
+	return (mapped_str);
 }

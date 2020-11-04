@@ -6,13 +6,13 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 10:24:30 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/01 11:29:52 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/04 21:49:53 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 static char		*skip_spaces(char *nptr, int *sign);
 static int		str_to_int(char *str);
-static int		pow(int base, int pow);
+static int		power(int base, int pow);
 static int		count_digits(char *str);
 
 int				ft_atoi(const char *nptr)
@@ -61,14 +61,14 @@ static int		str_to_int(char *str)
 	while (*(str + i) >= '0' && *(str + i) <= '9')
 	{
 		digit = *(str + i) - '0';
-		digit = digit * pow(10, digits_amount - 1 - i);
+		digit = digit * power(10, digits_amount - 1 - i);
 		result = result + digit;
 		i++;
 	}
 	return (result);
 }
 
-static int		pow(int base, int pow)
+static int		power(int base, int pow)
 {
 	int result;
 

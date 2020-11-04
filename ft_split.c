@@ -6,7 +6,7 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 18:00:56 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/03 20:57:09 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/04 13:23:51 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,11 @@ int		**ft_split(char const *s, char c)
 	int delims;
 	int len_split;
 	char *after_trim;
+	char *str_delim;
 
+	str_delim = chr_to_str(c);
 	printf("Input string: %s\n", s);
-	after_trim = ft_strtrim(s, chr_to_str(c));
+	after_trim = ft_strtrim(s, str_delim);
 	printf("after trimming delimiter: %s\n", after_trim);
 	delims = count_delims(after_trim, c);
 	printf("delims = %d\n", delims);
@@ -35,10 +37,23 @@ int		**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 
+	char **2d_array;
+	char *temp;
+	int i;
+	int j;
 
+	i = 0;
+	j = 0;
+	**2d_array = (char**)malloc(sizeof(char*) * delims + 1);
 
+	while (i < delims)
+	{
+		temp = *(2d_array + i);
+		len_split = len_of_split(after_trim, c);
+		
+	}
 	
-
+	free(str_delim);
 	free(after_trim);
 
 	
