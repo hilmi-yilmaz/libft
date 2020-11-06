@@ -6,13 +6,31 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 22:10:03 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/04 23:01:00 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/06 22:44:50 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+#include <stdio.h>
+
+size_t	ft_strlen(const char *s);
+
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
+	size_t i;
+	size_t len_dst;
+	size_t len_src;
 
-
-
+	i = 0;
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(src);
+	if (size <= len_dst)
+		return (size + len_src);
+	while (i < size - len_dst - 1)
+	{
+		*(dst + len_dst + i) = *(src + i);
+		i++;
+	}
+	*(dst + len_dst + i) = '\0';
+	return (len_dst + len_src);
 }

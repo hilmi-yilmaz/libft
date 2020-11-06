@@ -2,26 +2,66 @@
 #include <string.h>
 #include <bsd/string.h>
 
-//size_t ft_strlcat(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+void	print_c_result(const char *src, size_t size);
+void	print_own_result(const char *src, size_t size);
 
 int		main(void)
 {
-	//char dest[5] = "yo";
-	char dest[4];
-	const char src[] = "hilmi";
-	size_t size = 2;
-	size_t c_result;
-	//size_t own_result;
-
-	printf("dst = %s\n", dest);
+	const char src[] = "lorem";
+	size_t size = 15;
+	//char dest[] = "yo";
+	//char dest1[] = "yo";
+	
+	/*
+	printf("Address src   = %p\n", src);
+	printf("Address dest  = %p\n", dest);
+	printf("Address dest1 = %p\n", dest1);
+	*/
+	printf("\nInput values:\n");
 	printf("src = %s\n", src);
 	printf("size = %lu\n", size);
-	//own_result = ft_strlcat(dest, src, size);
-	c_result = strlcat(dest, src, size);
-	//printf("Own function return value: %lu\n", own_result);
-	printf("C   function return value: %lu\n", c_result);
-	//printf("Own function dest: %s\n", dest);
-	printf("C   function dest: %s\n", dest);
-	
+	//printf("dest = %s\n", dest1);
+
+
+	print_c_result(src, size);
+	print_own_result(src, size);
+
+	/*	
+	printf("\nOwn result:\n");
+	size_t own_result = ft_strlcat(dest1, src, size);
+	printf("Return = %lu\n", own_result);
+	printf("Dest = %s\n", dest1);
+
+	printf("\nC result:\n");
+	size_t c_result = strlcat(dest, src, size);
+	printf("Return = %lu\n", c_result);
+	printf("Dest = %s\n", dest);
+	*/
 	return (0);
+}
+
+void	print_c_result(const char *src, size_t size)
+{
+
+	char dest[15];
+	dest[11] = 'a';
+	printf("dst = %s\n", dest);
+
+	
+	printf("\nC result:\n");
+	size_t c_result = strlcat(dest, src, size);
+	printf("Return = %lu\n", c_result);
+	printf("Dest = %s\n", dest);
+}
+
+void	print_own_result(const char *src, size_t size)
+{
+
+	char dest[15];
+	dest[11] = 'a';
+	printf("\nOwn result:\n");
+	size_t own_result = ft_strlcat(dest, src, size);
+	printf("Return = %lu\n", own_result);
+	printf("Dest = %s\n", dest);
 }
