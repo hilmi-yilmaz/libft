@@ -6,21 +6,36 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/30 15:02:45 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/10/30 15:54:05 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/08 13:10:50 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "libft.h"
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	size_t			i;
+	size_t			len;
+	unsigned char	*s1_unsig;
+	unsigned char	*s2_unsig;
 
 	i = 0;
-	while (i < n)
+	s1_unsig = (unsigned char *)s1;
+	s2_unsig = (unsigned char *)s2;
+	if (n != 0)
 	{
-		if (*(s1 + i) != *(s2 + i))
-			return (*(s1 + i) - *(s2 + i));
+		if (ft_strlen(s1) == 0 || ft_strlen(s2) == 0)
+			len = 1;
+		else
+			len = n;
+	}
+	else
+		len = 0;
+	while (i < len)
+	{
+		if (*(s1_unsig + i) != *(s2_unsig + i))
+			return (*(s1_unsig + i) - *(s2_unsig + i));
 		i++;
 	}
 	return (0);

@@ -6,16 +6,16 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 
 int		main(void)
 {
-	/* DIFFERENCE BETWEEN MEMMOVE AND MEMCPY 
+	/* DIFFERENCE BETWEEN MEMMOVE AND MEMCPY */
 	char str[] = "abcde";  //For C memmove function
-	char str1[] = "abcde"; //For C memcpy  function
+//	char str1[] = "abcde"; //For C memcpy  function
 	char str2[] = "abcde"; //For Own memmove function
 
-	printf("C     memcpy: %s\n", memcpy(str1 + 2, str1, 3 * sizeof(char)));
+//	printf("C     memcpy: %s\n", memcpy(str1 + 2, str1, 6 * sizeof(char)));
 	printf("C    memmove: %s\n", memmove(str + 2, str, 3 * sizeof(char)));
 	printf("Own  memmove: %s\n\n", ft_memmove(str2 + 2, str2, 3 * sizeof(char)));
-	*/
-	/* SECOND CHECK */
+	
+	/* SECOND CHECK 
 
 	char dest[] = "abc";
 	char dest1[] = "abc";
@@ -30,7 +30,7 @@ int		main(void)
 
 	printf("C    memmove: %s\n", dest);
 	printf("Own  memmove: %s\n\n", dest1);
-
+	*/
 	/* THIRD CHECK 
 	int arr[] = {1, 2, 3};
 	int arr1[] = {1, 2, 3};

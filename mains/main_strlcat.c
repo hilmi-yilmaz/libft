@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include <bsd/string.h>
+//#include <bsd/string.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 void	print_c_result(const char *src, size_t size);
@@ -8,8 +8,8 @@ void	print_own_result(const char *src, size_t size);
 
 int		main(void)
 {
-	const char src[] = "lorem";
-	size_t size = 15;
+	const char src[] = "";
+	size_t size = 20;
 	//char dest[] = "yo";
 	//char dest1[] = "yo";
 	
@@ -44,8 +44,7 @@ int		main(void)
 void	print_c_result(const char *src, size_t size)
 {
 
-	char dest[15];
-	dest[11] = 'a';
+	char dest[20] = "hilmiyilmaz";
 	printf("dst = %s\n", dest);
 
 	
@@ -58,8 +57,7 @@ void	print_c_result(const char *src, size_t size)
 void	print_own_result(const char *src, size_t size)
 {
 
-	char dest[15];
-	dest[11] = 'a';
+	char dest[20] = "hilmiyilmaz";
 	printf("\nOwn result:\n");
 	size_t own_result = ft_strlcat(dest, src, size);
 	printf("Return = %lu\n", own_result);

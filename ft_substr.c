@@ -6,24 +6,33 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 13:01:02 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/07 17:00:13 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/08 15:04:25 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*sub;
+	size_t	max_len_sub;
 
 	i = 0;
+	if (s == NULL)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	max_len_sub = ft_strlen(s + start);
+	if (len >= max_len_sub)
+		len = max_len_sub;
 	sub = (char*)malloc(len + 1);
-	if (sub == NULL || s == NULL)
+	if (sub == NULL)
 		return (NULL);
 	else
 	{
-		while (i < len && *(s + start + i) != '\0')
+		while (i < len)
 		{
 			*(sub + i) = *(s + start + i);
 			i++;

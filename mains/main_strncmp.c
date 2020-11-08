@@ -5,9 +5,9 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 int		main(void)
 {
-	char s1[] = "hil";
-	char s2[] = "";
-	size_t n = 1;
+	char s1[] = "student";
+	char s2[] = "studE";
+	size_t n = 5;
 	int c_result;
 	int own_result;
 
@@ -16,4 +16,13 @@ int		main(void)
 	printf("C   function: %d\n", c_result);
 	printf("Own function: %d\n", own_result);
 	return (0);
-}	
+}
+
+/* TESTS (s1, s2, n)
+ * "", "", 40
+ * "codam", "codaM", 2
+ * "codam", "codaM", 5
+ * "hello world", "hello ", 0
+ * "hello\200", "hello\0", 6
+ * "studenten", "", 0
+ */ 
