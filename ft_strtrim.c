@@ -6,36 +6,13 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 15:44:19 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/04 16:19:45 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/07 20:12:49 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-static int	char_in_set(char c, char const *set);
-static char *trim(char const *s1, char const *set, int *trim_l, int *trim_r);
-size_t		ft_strlen(const char *s);
-char		*ft_substr(char const *s, unsigned int start, size_t len);
-char		*ft_strdup(const char *s1);
-
-char		*ft_strtrim(char const *s1, char const *set)
-{
-	int		trim_l;
-	int		trim_r;
-	char	*trimmed_str;
-
-	trim_l = 0;
-	trim_r = 0;
-	if (s1 == NULL)
-		return (NULL);
-	else if (set == NULL)
-		return (ft_strdup(s1));
-	else
-	{
-		trimmed_str = trim(s1, set, &trim_l, &trim_r);
-		return (trimmed_str);
-	}
-}
+#include <stddef.h>
+#include <stdlib.h>
+#include "libft.h"
 
 static int	char_in_set(char c, char const *set)
 {
@@ -76,4 +53,48 @@ static char	*trim(char const *s1, char const *set, int *trim_l, int *trim_r)
 		i++;
 	}
 	return (ft_substr(s1, *trim_l, len_s1 - *trim_r - *trim_l));
+}
+
+static int	check_for_same(char const *s1, char const *set)
+{
+	size_t	i;
+	size_t	count;
+
+	i = 0;
+	count = 0;
+	while (*(s1 + i) != '\0')
+	{
+		if (char_in_set(*(s1 + i), set) == 1)
+			count++;
+		i++;
+	}
+	if (count == ft_strlen(s1))
+		return (1);
+	else
+		return (0);
+}
+
+char		*ft_strtrim(char const *s1, char const *set)
+{
+	int		trim_l;
+	int		trim_r;
+	char	*trimmed_str;
+
+	trim_l = 0;
+	trim_r = 0;
+	if (s1 == NULL)
+		return (NULL);
+	else if (set == NULL)
+		return (ft_strdup(s1));
+	else if (check_for_same(s1, set) == 1)
+	{
+		trimmed_str = (char*)malloc(sizeof(char) * 1);
+		*trimmed_str = '\0';
+		return (trimmed_str);
+	}
+	else
+	{
+		trimmed_str = trim(s1, set, &trim_l, &trim_r);
+		return (trimmed_str);
+	}
 }

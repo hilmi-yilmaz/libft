@@ -5,7 +5,7 @@ char	*ft_itoa(int n);
 
 int		main(void)
 {
-	int n = -2147483648;
+	int n = -1234567;
 	char *n_str;
 
 	printf("Input : %d\n", n); 

@@ -6,13 +6,12 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 17:03:24 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/04 18:50:53 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/07 20:28:02 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-size_t	ft_strlen(const char *s);
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -27,7 +26,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (i < len_s)
 	{
-		*(mapped_str + i) = (*f)(32, *(s + i));
+		*(mapped_str + i) = (*f)(i, *(s + i));
 		i++;
 	}
 	*(mapped_str + i) = '\0';

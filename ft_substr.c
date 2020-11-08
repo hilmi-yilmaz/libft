@@ -6,7 +6,7 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 13:01:02 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/03 14:59:07 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/07 17:00:13 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub;
 
 	i = 0;
-	sub = (char*)malloc(len);
+	sub = (char*)malloc(len + 1);
 	if (sub == NULL || s == NULL)
 		return (NULL);
 	else
 	{
-		while (i < len)
+		while (i < len && *(s + start + i) != '\0')
 		{
 			*(sub + i) = *(s + start + i);
 			i++;

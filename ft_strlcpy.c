@@ -6,13 +6,12 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/29 23:51:25 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/01 12:24:07 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/07 19:02:42 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-
-size_t	ft_strlen(const char *s);
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

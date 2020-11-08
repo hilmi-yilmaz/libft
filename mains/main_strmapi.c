@@ -3,6 +3,7 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	map_func(unsigned int i, char c);
+char	map_func_1(unsigned int i, char c);
 
 int		main(void)
 {
@@ -10,7 +11,7 @@ int		main(void)
 	char str[] = "ABC";
 	char *result;
 	
-	result = ft_strmapi(str, map_func);
+	result = ft_strmapi(str, map_func_1);
 	printf("result = %s\n", result);
 	free(result);
 	return (0);
@@ -19,4 +20,10 @@ int		main(void)
 char	map_func(unsigned int i, char c)
 {
 	return (c + i);
+}
+
+
+char	map_func_1(unsigned int i, char c)
+{
+	return (c - i);
 }

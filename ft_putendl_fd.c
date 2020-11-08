@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 19:44:09 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/04 19:48:44 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/07 20:07:17 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	ft_putendl_fd(char *s, int fd)
 		write(fd, (s + i), 1);
 		i++;
 	}
-	write(1, "\n", 1);
+	write(fd, "\n", 1);
 }

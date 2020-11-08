@@ -6,42 +6,12 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 13:25:31 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/04 16:11:41 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/07 20:14:27 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stddef.h>
-
-static int		len_nb(int n);
-static int		power(int base, int pow);
-static char		*operations_for_negative(char *n_str, int *n, int *i);
-static char		*lowest_int(char *str);
-
-char			*ft_itoa(int n)
-{
-	int		i;
-	int		len;
-	int		result;
-	char	*n_str;
-
-	if (n == -2147483648)
-		return (lowest_int("-2147483648"));
-	len = len_nb(n);
-	n_str = (char*)malloc((sizeof(char) * len) + 1);
-	if (n_str == NULL)
-		return (NULL);
-	n_str = operations_for_negative(n_str, &n, &i);
-	while (i < len)
-	{
-		result = n / power(10, len - 1 - i);
-		result = result % 10;
-		*(n_str + i) = result + '0';
-		i++;
-	}
-	*(n_str + i) = '\0';
-	return (n_str);
-}
 
 static int		len_nb(int n)
 {
@@ -104,6 +74,31 @@ static char		*lowest_int(char *str)
 	while (i < 11)
 	{
 		*(n_str + i) = *(str + i);
+		i++;
+	}
+	*(n_str + i) = '\0';
+	return (n_str);
+}
+
+char			*ft_itoa(int n)
+{
+	int		i;
+	int		len;
+	int		result;
+	char	*n_str;
+
+	if (n == -2147483648)
+		return (lowest_int("-2147483648"));
+	len = len_nb(n);
+	n_str = (char*)malloc(sizeof(char) * (len + 1));
+	if (n_str == NULL)
+		return (NULL);
+	n_str = operations_for_negative(n_str, &n, &i);
+	while (i < len)
+	{
+		result = n / power(10, len - 1 - i);
+		result = result % 10;
+		*(n_str + i) = result + '0';
 		i++;
 	}
 	*(n_str + i) = '\0';

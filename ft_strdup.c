@@ -6,13 +6,12 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 15:16:24 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/04 16:19:49 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/07 19:01:25 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-size_t	ft_strlen(const char *s);
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {

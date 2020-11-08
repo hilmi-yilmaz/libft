@@ -6,24 +6,13 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 13:34:16 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/03 15:25:44 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/07 20:11:29 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
-#include <stdio.h>
-
-size_t		ft_strlen(const char *s);
-static char *fill_malloc(char const *s1, char const *s2);
-
-char		*ft_strjoin(char const *s1, char const *s2)
-{
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-	else
-		return (fill_malloc(s1, s2));
-}
+#include "libft.h"
 
 static char	*fill_malloc(char const *s1, char const *s2)
 {
@@ -51,4 +40,12 @@ static char	*fill_malloc(char const *s1, char const *s2)
 		*(joined_str + i) = '\0';
 		return (joined_str);
 	}
+}
+
+char		*ft_strjoin(char const *s1, char const *s2)
+{
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	else
+		return (fill_malloc(s1, s2));
 }
