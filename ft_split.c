@@ -6,7 +6,7 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 18:00:56 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/07 20:20:03 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/09 20:32:04 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ static int	count_delims(char const *s, char c)
 		}
 		i++;
 	}
+	free(trimmed_s);
 	free(str_delim);
 	return (delim);
 }
@@ -94,6 +95,8 @@ char		**ft_split(char const *s, char c)
 	size_t	i;
 
 	i = 0;
+	if (s == NULL)
+		return (NULL);
 	while (*(s + i) == c)
 		i++;
 	if (i == ft_strlen(s))
@@ -103,8 +106,6 @@ char		**ft_split(char const *s, char c)
 		return (ndarray);
 	}
 	delims = count_delims(s, c);
-	if (s == NULL)
-		return (NULL);
 	ndarray = (char**)malloc(sizeof(char*) * (delims + 1 + 1));
 	if (ndarray == NULL)
 		return (NULL);
