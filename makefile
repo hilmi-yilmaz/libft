@@ -1,7 +1,7 @@
 NAME = libft.a
 HEADER_FILE = libft.h
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
@@ -9,7 +9,7 @@ $(NAME): *.o
 	ar cr $@ $^
 
 %.o: %.c $(HEADER_FILE)
-	$(CC) $(CFLAGS) -c *.c
+	$(CC) $(CFLAGS) -c ft_*.c
 
 clean:
 	rm -f *.o

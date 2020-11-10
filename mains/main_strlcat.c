@@ -8,7 +8,7 @@ void	print_own_result(const char *src, size_t size);
 
 int		main(void)
 {
-	const char src[] = "";
+	const char src[] = "lorem ipsum dolor sit amet";
 	size_t size = 20;
 	//char dest[] = "yo";
 	//char dest1[] = "yo";
@@ -44,7 +44,8 @@ int		main(void)
 void	print_c_result(const char *src, size_t size)
 {
 
-	char dest[20] = "hilmiyilmaz";
+	char dest[16];
+	memset(dest, 'r', 15);
 	printf("dst = %s\n", dest);
 
 	
@@ -57,7 +58,8 @@ void	print_c_result(const char *src, size_t size)
 void	print_own_result(const char *src, size_t size)
 {
 
-	char dest[20] = "hilmiyilmaz";
+	char dest[16];
+	memset(dest, 'r', 15);
 	printf("\nOwn result:\n");
 	size_t own_result = ft_strlcat(dest, src, size);
 	printf("Return = %lu\n", own_result);
