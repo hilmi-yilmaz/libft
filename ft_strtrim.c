@@ -6,7 +6,7 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 15:44:19 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/07 20:12:49 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/11 20:03:01 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,12 +89,16 @@ char		*ft_strtrim(char const *s1, char const *set)
 	else if (check_for_same(s1, set) == 1)
 	{
 		trimmed_str = (char*)malloc(sizeof(char) * 1);
+		if (trimmed_str == NULL)
+			return (NULL);
 		*trimmed_str = '\0';
 		return (trimmed_str);
 	}
 	else
 	{
 		trimmed_str = trim(s1, set, &trim_l, &trim_r);
+		if (trimmed_str == NULL)
+			return (NULL);
 		return (trimmed_str);
 	}
 }
