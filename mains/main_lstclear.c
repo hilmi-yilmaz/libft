@@ -26,7 +26,6 @@ void	print_list_untill(t_list *lst, int untill)
 	printf("\n");
 }
 
-
 void	del(void *content)
 {
 	free(content);
@@ -59,17 +58,17 @@ int		main(void)
 	
 	print_list(head);
 
-	ft_lstdelone(third, del);
+	ft_lstclear(&head, del);
 
-	print_list_untill(head, 2);
+	print_list_untill(head, 0);
 
 	//Free the allocated elements
-	free(ptr1);
-	free(ptr2);
+	//free(ptr1);
+	//free(ptr2);
 	//free(ptr3);
 
-	free(head->next);
-	free(head);
+	//free(head->next);
+	//free(head);
 	/*
 	while (head != NULL)
 	{
@@ -77,5 +76,4 @@ int		main(void)
 		head = head->next;
 		free(temp);
 	}*/
-//gcc -Wall -Wextra -Werror -fsanitize=address -g mains/main_lstdelone.c ft_lstadd_back.c ft_lstadd_front.c ft_lstsize.c ft_lstnew.c ft_lstlast.c
 }

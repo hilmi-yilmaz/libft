@@ -6,11 +6,10 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 15:44:19 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/11 20:03:01 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/14 18:46:24 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include <stdlib.h>
 #include "libft.h"
 

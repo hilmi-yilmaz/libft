@@ -6,12 +6,12 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 13:25:31 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/07 20:14:27 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/14 18:46:48 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stddef.h>
+#include "libft.h"
 
 static int		len_nb(int n)
 {

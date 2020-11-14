@@ -2,7 +2,7 @@
 #include <string.h>
 #include <strings.h>
 #include <stdlib.h>
-#include <bsd/string.h>
+//#include <bsd/string.h>
 #include <ctype.h>
 #include "libft.h"
 
@@ -308,6 +308,7 @@ int		main(void)
 	test_calloc(0, 4);
 	test_calloc(4, 0);
 	test_calloc(5, 5);
+	test_calloc(0, 0);
 
 	printf("\n%sTesting ft_strdup...%s\n", BLUE, RESET);
 	test_strdup("Codam");
@@ -1087,19 +1088,38 @@ void	test_calloc(size_t count, size_t size)
 	own_result = ft_calloc(count, size);
 	i = 0;
 	counter = 0;
-	while (i < count * size)
+	if (size == 0 || count == 0)
 	{
-		if (*(c_result + i) == *(own_result + i))
-		{
-			//printf("%d", *(c_result + i));
-			counter++;
-		}
-		i++;
-	}
-	//printf("\n");
+		//printf("%d\n", *c_result);
+		//printf("%d\n", *own_result);
 
-	if (counter == i)	
+		while (i < 1)
+		{
+			if (*(c_result + i) == *(own_result + i))
+			{
+				//printf("%d", *(c_result + i));
+				counter++;
+			}
+			i++;
+		}
+	}
+	else
+	{
+		while (i < count * size)
+		{
+			if (*(c_result + i) == *(own_result + i))
+			{
+				//printf("%d", *(c_result + i));
+				counter++;
+			}
+			i++;
+		}
+		//printf("\n");
+	}
+	if (counter == i && i != 0)
 		printf("%sPassed%s\n", GREEN, RESET);
+	//else if (counter == i && i == 0)
+	//	printf("%sPassed%s\n", GREEN, RESET);
 	else
 		printf("%sFailed%s\n", RED, RESET);
 		

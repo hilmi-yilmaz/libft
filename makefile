@@ -6,20 +6,32 @@ SOURCE =	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.
 			ft_calloc.c ft_strdup.c \
 			ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c \
 			ft_putendl_fd.c ft_putnbr_fd.c
-OBJECT = $(SOURCE:.c=.o)
+BONUS_SOURCE = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
+			   ft_lstclear.c ft_lstiter.c
+REG_OBJECT = $(SOURCE:.c=.o)
+BONUS_OBJECT = $(BONUS_SOURCE:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
+ifdef WITH_BONUS
+OBJ_FILES = $(REG_OBJECT) $(BONUS_OBJECT)
+else
+OBJ_FILES = $(REG_OBJECT)
+endif
+
 all: $(NAME)
 
-$(NAME): $(OBJECT)
+$(NAME): $(OBJ_FILES)
 	ar cr $@ $^
 
+bonus:
+	make  WITH_BONUS=1 all
+
 %.o: %.c $(HEADER_FILE)
-	$(CC) $(CFLAGS) -c $(SOURCE)
+	$(CC) $(CFLAGS) -c $<
 
 clean:
-	rm -f *.o
+	rm -f $(REG_OBJECT) $(BONUS_OBJECT)
 
 fclean: clean
 	rm -f $(NAME)

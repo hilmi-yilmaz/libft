@@ -6,11 +6,10 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 18:00:56 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/09 20:32:04 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/14 18:55:33 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include <stdlib.h>
 #include "libft.h"
 
@@ -19,6 +18,8 @@ static char	*chr_to_str(char c)
 	char *str;
 
 	str = (char*)malloc(2);
+	if (str == NULL)
+		return (NULL);
 	str[0] = c;
 	str[1] = '\0';
 	return (str);
@@ -47,6 +48,8 @@ static int	count_delims(char const *s, char c)
 	if (str_delim == NULL)
 		return (0);
 	trimmed_s = ft_strtrim(s, str_delim);
+	if (trimmed_s == NULL)
+		return (0);
 	while (*(trimmed_s + i) != '\0')
 	{
 		if (*(trimmed_s + i) == c)
@@ -102,6 +105,8 @@ char		**ft_split(char const *s, char c)
 	if (i == ft_strlen(s))
 	{
 		ndarray = (char**)malloc(sizeof(char*) * 1);
+		if (ndarray == NULL)
+			return (NULL);
 		*ndarray = NULL;
 		return (ndarray);
 	}
