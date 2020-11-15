@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/29 23:51:25 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/14 18:59:50 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/15 16:29:54 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	i;
 	size_t	len_src;
 
+	if (dst == NULL)
+		return (0);
 	i = 0;
 	len_src = ft_strlen(src);
 	if (size == 0)

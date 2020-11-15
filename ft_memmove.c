@@ -6,33 +6,47 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 19:05:02 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/14 17:33:48 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/15 16:45:09 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+static void	overlap_loop(unsigned char *ptr_dst,
+						const unsigned char *ptr_src, size_t len)
 {
-	size_t				i;
-	size_t				j;
-	const unsigned char	*ptr_src;
-	unsigned char		*ptr_dst;
-	unsigned char		buff[len];
+	size_t	i;
 
 	i = 0;
-	j = 0;
-	ptr_src = src;
-	ptr_dst = dst;
-	while (i < len && *(ptr_dst + i) != '\0')
+	while (i < len)
 	{
-		*(buff + i) = *(ptr_src + i);
+		*(ptr_dst + i) = *(ptr_src + i);
 		i++;
 	}
-	while (j < i)
+}
+
+void		*ft_memmove(void *dst, const void *src, size_t len)
+{
+	size_t				i;
+	const unsigned char	*ptr_src;
+	unsigned char		*ptr_dst;
+
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	i = 0;
+	ptr_src = src;
+	ptr_dst = dst;
+	if (dst < src)
 	{
-		*(ptr_dst + j) = *(buff + j);
-		j++;
+		overlap_loop(ptr_dst, ptr_src, len);
+	}
+	else
+	{
+		while (i < len)
+		{
+			*(ptr_dst + len - i - 1) = *(ptr_src + len - i - 1);
+			i++;
+		}
 	}
 	return ((void*)dst);
 }

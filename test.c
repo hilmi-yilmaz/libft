@@ -125,9 +125,15 @@ int		main(void)
 	test_memmove("1234", "ooo", 3);
 	test_memmove("ik zit op Codam", "hallo", 5);
 	test_memmove("yoo", "ik", 2);
-	char str[] = "abcde";
+	char str[] = "abcdefg";
 	test_memmove(str, str + 2, 3);
 	test_memmove(str, str + 2, 2);
+	test_memmove(str + 2, str, 3);
+	ft_memmove(str + 2, str, 3);
+	test_memmove(str + 2, str, 2);
+	char str1[] = "ik ait op codam coding college";
+	test_memmove(str1, str1 + 3, 28);
+	ft_memmove(str1, str1 + 3, 28);
 
 	printf("\n%sTesting ft_memchr...%s\n", BLUE, RESET);
 	test_memchr("hilmi", 'm', 5);
@@ -211,6 +217,8 @@ int		main(void)
 	test_strncmp("codam", "coDam", 2);
 	test_strncmp("codam", "coDam", 3);
 	test_strncmp("codam", "coDam", 10);
+	test_strncmp("helloworld", "hel", 10);
+	test_strncmp("abc\0\0\0", "abc\0abc", 6);
 	test_strncmp("", "", 1);
 	test_strncmp("", "i", 1);
 	test_strncmp("", "", 0);
@@ -583,7 +591,7 @@ void	test_memmove(void *dst, const void *src, size_t n)
 			count++;
 		i++;
 	}	
-	if (i == count)
+	if (i == count && i != 0)
 		printf("%sPassed%s", GREEN, RESET);
 	else
 		printf("%sFailed%s", RED, RESET);
@@ -768,6 +776,7 @@ void	test_strlcat(char *dst, const char *src, size_t size)
 
 	/* Print after memset
 	i = 0;
+	printf("len = %lu\n", ft_strlen(str1));
 	while (i < 50)
 	{
 		printf("%c", *(c_dst_malloc + i));

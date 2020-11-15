@@ -6,7 +6,7 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 18:00:56 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/14 18:55:33 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/15 16:25:51 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ static int	count_delims(char const *s, char c)
 	i = 0;
 	delim = 0;
 	str_delim = chr_to_str(c);
-	if (str_delim == NULL)
-		return (0);
 	trimmed_s = ft_strtrim(s, str_delim);
 	if (trimmed_s == NULL)
 		return (0);
