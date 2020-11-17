@@ -5,113 +5,92 @@
 /*                                                     +:+                    */
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/03 18:00:56 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/15 16:25:51 by hyilmaz       ########   odam.nl         */
+/*   Created: 2020/11/17 17:58:32 by hyilmaz       #+#    #+#                 */
+/*   Updated: 2020/11/17 20:56:08 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
-static char	*chr_to_str(char c)
+static int			split_count(char *s, char c)
 {
-	char *str;
+	int	i;
+	int	count;
 
-	str = (char*)malloc(2);
-	if (str == NULL)
-		return (NULL);
-	str[0] = c;
-	str[1] = '\0';
-	return (str);
+	i = 0;
+	count = 0;
+	while (*(s + i) != '\0')
+	{
+		if (*(s + i) != c && (*(s + i + 1) == c || *(s + i + 1) == '\0'))
+			count++;
+		i++;
+	}
+	return (count);
 }
 
-static int	skip_delims(char *str, char c)
+static int			skip_delims(char *s, char c)
 {
 	int i;
 
 	i = 0;
-	while (*(str + i) == c)
+	while (*(s + i) == c)
 		i++;
 	return (i);
 }
 
-static int	count_delims(char const *s, char c)
+static char			**free_array(char **array, int i)
 {
-	int		i;
-	int		delim;
-	char	*trimmed_s;
-	char	*str_delim;
+	int c;
 
-	i = 0;
-	delim = 0;
-	str_delim = chr_to_str(c);
-	trimmed_s = ft_strtrim(s, str_delim);
-	if (trimmed_s == NULL)
-		return (0);
-	while (*(trimmed_s + i) != '\0')
+	c = 0;
+	while (c < i)
 	{
-		if (*(trimmed_s + i) == c)
-		{
-			while (*(trimmed_s + i) == c)
-				i++;
-			delim++;
-			i--;
-		}
-		i++;
+		free(*(array + c));
+		c++;
 	}
-	free(trimmed_s);
-	free(str_delim);
-	return (delim);
+	free(array);
+	return (NULL);
 }
 
-static char	**split(char **ndarray, const char *s, char c, int delims)
+static char			**fill_array(char **array, char *s, char c, int elements)
 {
-	int		i;
-	char	*ptr;
-	int		len;
-	int		start;
+	int i;
+	int	j;
+	int	len_word;
 
 	i = 0;
-	ptr = (char*)s;
-	start = 0;
-	len = 0;
-	while (i < delims + 1)
+	j = 0;
+	len_word = 0;
+	while (i < elements - 1)
 	{
-		start = len + skip_delims(ptr + len, c);
-		ptr = ptr + start;
-		len = 0;
-		while (*(ptr + len) != c && *(ptr + len) != '\0')
-			len++;
-		*(ndarray + i) = ft_substr(ptr, 0, len);
+		s = s + len_word;
+		s = s + skip_delims(s, c);
+		len_word = 0;
+		while (*(s + len_word) != c && *(s + len_word) != '\0')
+			len_word++;
+		*(array + i) = ft_substr(s, 0, len_word);
+		if (*(array + i) == NULL)
+			return (free_array(array, i));
 		i++;
 	}
-	*(ndarray + i) = NULL;
-	return (ndarray);
+	*(array + i) = NULL;
+	return (array);
 }
 
-char		**ft_split(char const *s, char c)
+char				**ft_split(char const *s, char c)
 {
-	int		delims;
-	char	**ndarray;
-	size_t	i;
+	int		elements;
+	char	**array;
+	char	*typecasted_s;
 
-	i = 0;
 	if (s == NULL)
 		return (NULL);
-	while (*(s + i) == c)
-		i++;
-	if (i == ft_strlen(s))
-	{
-		ndarray = (char**)malloc(sizeof(char*) * 1);
-		if (ndarray == NULL)
-			return (NULL);
-		*ndarray = NULL;
-		return (ndarray);
-	}
-	delims = count_delims(s, c);
-	ndarray = (char**)malloc(sizeof(char*) * (delims + 1 + 1));
-	if (ndarray == NULL)
+	typecasted_s = (char*)s;
+	elements = split_count(typecasted_s, c) + 1;
+	array = (char**)malloc(sizeof(char*) * elements);
+	if (array == NULL)
 		return (NULL);
-	ndarray = split(ndarray, s, c, delims);
-	return (ndarray);
+	array = fill_array(array, typecasted_s, c, elements);
+	return (array);
 }

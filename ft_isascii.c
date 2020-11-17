@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 11:21:37 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/10/31 11:30:05 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/17 15:34:54 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@ int		ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);
-	else
-		return (0);
+	return (0);
 }

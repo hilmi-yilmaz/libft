@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 10:24:30 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/14 17:44:41 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/17 15:33:46 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,7 @@ static int		count_digits(char *str)
 
 	i = 0;
 	while (*(str + i) >= '0' && *(str + i) <= '9')
-	{
 		i++;
-	}
 	return (i);
 }
 

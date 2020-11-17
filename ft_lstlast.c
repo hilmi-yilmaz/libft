@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/13 15:12:46 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/13 16:32:10 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/17 15:56:24 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_list	*ft_lstlast(t_list *lst)
 	int size;
 	int i;
 
+	if (lst == NULL)
+		return (NULL);
 	size = ft_lstsize(lst);
 	i = 0;
 	while (i < size - 1)

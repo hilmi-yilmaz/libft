@@ -6,22 +6,19 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 19:39:38 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/14 18:49:41 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/17 15:45:46 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
+	size_t	len_s;
 
-	i = 0;
 	if (s == NULL)
 		return ;
-	while (*(s + i) != '\0')
-	{
-		write(fd, (s + i), 1);
-		i++;
-	}
+	len_s = ft_strlen(s);
+	write(fd, s, len_s);
 }

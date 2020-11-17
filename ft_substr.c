@@ -6,7 +6,7 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 13:01:02 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/08 15:04:25 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/17 17:21:38 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub = (char*)malloc(len + 1);
 	if (sub == NULL)
 		return (NULL);
-	else
+	while (i < len)
 	{
-		while (i < len)
-		{
-			*(sub + i) = *(s + start + i);
-			i++;
-		}
-		*(sub + i) = '\0';
-		return (sub);
+		*(sub + i) = *(s + start + i);
+		i++;
 	}
+	*(sub + i) = '\0';
+	return (sub);
 }

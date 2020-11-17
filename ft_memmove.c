@@ -6,13 +6,13 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 19:05:02 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/15 16:45:09 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/17 15:13:43 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	overlap_loop(unsigned char *ptr_dst,
+static void	non_overlap_loop(unsigned char *ptr_dst,
 						const unsigned char *ptr_src, size_t len)
 {
 	size_t	i;
@@ -38,7 +38,7 @@ void		*ft_memmove(void *dst, const void *src, size_t len)
 	ptr_dst = dst;
 	if (dst < src)
 	{
-		overlap_loop(ptr_dst, ptr_src, len);
+		non_overlap_loop(ptr_dst, ptr_src, len);
 	}
 	else
 	{

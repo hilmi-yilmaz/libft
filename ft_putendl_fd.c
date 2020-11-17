@@ -6,23 +6,20 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 19:44:09 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/14 18:49:59 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/17 15:46:00 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int i;
+	size_t	len_s;
 
-	i = 0;
 	if (s == NULL)
 		return ;
-	while (*(s + i) != '\0')
-	{
-		write(fd, (s + i), 1);
-		i++;
-	}
+	len_s = ft_strlen(s);
+	write(fd, s, len_s);
 	write(fd, "\n", 1);
 }

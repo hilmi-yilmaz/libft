@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 11:27:09 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/06 22:06:45 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/17 15:35:08 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@ int		ft_isprint(int c)
 {
 	if (c >= 32 && c < 127)
 		return (1);
-	else
-		return (0);
+	return (0);
 }

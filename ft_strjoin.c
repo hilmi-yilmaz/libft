@@ -6,7 +6,7 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 13:34:16 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/14 18:46:07 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/17 17:23:50 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,16 @@ static char	*fill_malloc(char const *s1, char const *s2)
 	joined_str = (char*)malloc(s1_len + s2_len + 1);
 	if (joined_str == NULL)
 		return (NULL);
-	else
+	while (i < (s1_len + s2_len))
 	{
-		while (i < (s1_len + s2_len))
-		{
-			if (i < s1_len)
-				*(joined_str + i) = *(s1 + i);
-			else
-				*(joined_str + i) = *(s2 + i - s1_len);
-			i++;
-		}
-		*(joined_str + i) = '\0';
-		return (joined_str);
+		if (i < s1_len)
+			*(joined_str + i) = *(s1 + i);
+		else
+			*(joined_str + i) = *(s2 + i - s1_len);
+		i++;
 	}
+	*(joined_str + i) = '\0';
+	return (joined_str);
 }
 
 char		*ft_strjoin(char const *s1, char const *s2)
