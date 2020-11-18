@@ -6,7 +6,7 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/17 17:58:32 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/17 20:56:08 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/18 19:34:56 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,9 @@ static char			**free_array(char **array, int i)
 static char			**fill_array(char **array, char *s, char c, int elements)
 {
 	int i;
-	int	j;
 	int	len_word;
 
 	i = 0;
-	j = 0;
 	len_word = 0;
 	while (i < elements - 1)
 	{
