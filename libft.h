@@ -6,7 +6,7 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 17:07:34 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/14 17:50:35 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/20 11:18:58 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void(*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void*));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
