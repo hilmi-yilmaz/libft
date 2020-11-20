@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/18 19:39:36 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/20 11:20:58 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2020/11/20 11:45:10 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*element;
 	t_list	*new_list;
 
-	if (lst == NULL || f == NULL || del == NULL)
+	if (lst == NULL || f == NULL)
 		return (NULL);
 	new_list = NULL;
 	while (lst != NULL)
