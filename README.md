@@ -4,7 +4,7 @@ Libft is a self-written library which contains the most important functions of t
 
 ## Description
 
-The function names have the following structure: ft + _ + C Library Function Name. To find information about a function, use the manpages together with the C Library Function Name. All function are compiled with the following options: -Wall -Wextra -Werror. Also -fsanitize=address -g is used to detect memmory errors. E.g. it finds heap, stack and buffer overflows, memmory leaks etc. 
+The function names have the following structure: ft + _ + C Library Function Name. To find information about a function, use the manpages together with the C Library Function Name. All function are compiled with the following options: -Wall -Wextra -Werror. Also the -fsanitize=address (AddressSanitizer) flag is used to ensure no memmory errors are present in the functions. E.g. the AdressSanitizer finds heap, stack and buffer overflows, memmory leaks etc. 
 
 A lot of functions are not part of the C Standard Library. These functions do the following:
 
