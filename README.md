@@ -8,6 +8,6 @@ The function names have the following structure: ft + _ + C Library Function Nam
 
 A lot of functions are not part of the C Standard Library. These functions do the following:
 
-Markup : * ft_substr:  Allocates (with malloc(3)) and returns a substring from the string ’s’. The substring begins at index ’start’ and is of maximum size ’len’.
-		 * ft_strjoin: 
+* ft_substr:  Allocates (with malloc(3)) and returns a substring from the string ’s’. The substring begins at index ’start’ and is of maximum size ’len’.
+* ft_strjoin: 
 		
