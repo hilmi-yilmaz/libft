@@ -4,7 +4,7 @@ Libft is a self-written library which contains the most important functions of t
 
 ## Description
 
-The function names have the following structure: ft + _ + C Library Function Name. To find information about a function, use the manpages together with the C Library Function Name. 
+The function names have the following structure: ft + _ + C Library Function Name. To find information about a function, use the manpages together with the C Library Function Name. All function are compiled with the following options: -Wall -Wextra -Werror. Also -fsanitize=address -g is used to detect memmory errors. E.g. it finds heap, stack and buffer overflows, memmory leaks etc. 
 
 A lot of functions are not part of the C Standard Library. These functions do the following:
 
@@ -30,3 +30,7 @@ The following functions can be used to create, add and remove elements from a li
 * **ft\_lstclear**: Deletes and frees the given element and every successor of that element, using the function ’del’ and free(3). Finally, the pointer to the list is set to NULL.
 * **ft\_lstiter**: Iterates the list ’lst’ and applies the function ’f’ to the content of each element.
 * **ft\_lstmap**: Iterates the list ’lst’ and applies the function ’f’ to the content of each element. Creates a new list resulting of the successive applications of the function ’f’. The ’del’ function is used to delete the content of an element if needed.
+
+## Usage
+
+Clone this repository and run 'make' in the command line. This will create the library libft.a with all functions excluding the Linked List functions. To add the Linked List function run 'make bonus'. 
