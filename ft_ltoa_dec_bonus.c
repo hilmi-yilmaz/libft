@@ -6,14 +6,14 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/07 13:21:28 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/01/07 13:21:29 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/01/10 18:04:33 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static int	    len_nb(long n)
+static int		len_nb(long n)
 {
 	int		i;
 	long	nb;
@@ -31,7 +31,7 @@ static int	    len_nb(long n)
 		return (i);
 }
 
-static long	    power(int base, int pow)
+static long		power(int base, int pow)
 {
 	long	result;
 
@@ -48,7 +48,7 @@ char			*ft_ltoa_dec(long n)
 {
 	int		i;
 	int		len;
-	long    result;
+	long	result;
 	char	*n_str;
 
 	i = 0;
