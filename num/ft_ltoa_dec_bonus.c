@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_ultoa_dec_bonus.c                               :+:    :+:            */
+/*   ft_ltoa_dec_bonus.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/07 13:21:28 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/01/10 18:04:33 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/09 11:48:12 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "../libft.h"
 
 static int		len_nb(long n)
 {

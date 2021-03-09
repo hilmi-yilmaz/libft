@@ -103,6 +103,8 @@ OBJ = 	$(OBJ_MEM:%=$(DIR_OBJ)%) \
 		$(OBJ_PRINT:%=$(DIR_OBJ)%) \
 		$(OBJ_LLIST:%=$(DIR_OBJ)%)
 
+# Set the VPATH variable
+VPATH = $(DIR_MEM):$(DIR_STR):$(DIR_NUM):$(DIR_CHAR):$(DIR_PRINT):$(DIR_LLIST)
 
 # .PHONY: print_vars
 
@@ -111,16 +113,19 @@ OBJ = 	$(OBJ_MEM:%=$(DIR_OBJ)%) \
 # 	@echo ""
 # 	@echo $(SRC)
 
-all: $(NAME)
+all: $(DIR_OBJ) $(NAME)
 
 $(NAME): $(OBJ)
 	ar cr $@ $^
 
-$(OBJ_DIR)%.o: %.c $(HEADER_FILE)
-	$(CC) $(CFLAGS) -c $<
+$(DIR_OBJ)%.o: %.c $(HEADER_FILE)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(DIR_OBJ):
+	mkdir $@
 
 clean:
-	rm -f $(OBJ)
+	rm -rdf $(DIR_OBJ)
 
 fclean: clean
 	rm -f $(NAME)

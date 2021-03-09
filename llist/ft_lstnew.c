@@ -6,11 +6,11 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 20:52:03 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/13 13:27:18 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/09 11:48:12 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 #include <stdlib.h>
 
 t_list	*ft_lstnew(void *content)

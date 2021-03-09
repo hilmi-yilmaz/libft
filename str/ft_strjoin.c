@@ -6,12 +6,12 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 13:34:16 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/17 17:23:50 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/09 11:48:12 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "../libft.h"
 
 static char	*fill_malloc(char const *s1, char const *s2)
 {

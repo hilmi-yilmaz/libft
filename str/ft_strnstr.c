@@ -6,11 +6,11 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/30 12:51:30 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/17 15:26:10 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/09 11:48:12 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 static char	*find_little(const char *big, const char *little,
 						size_t len, size_t len_little)

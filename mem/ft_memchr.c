@@ -6,11 +6,11 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 15:37:08 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/17 15:14:33 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/09 11:45:18 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
