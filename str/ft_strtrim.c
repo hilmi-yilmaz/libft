@@ -6,7 +6,7 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 15:44:19 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/03/09 11:48:12 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/10 13:07:05 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static int	char_in_set(char c, char const *set)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (*(set + i) != '\0')
@@ -73,7 +73,7 @@ static int	check_for_same(char const *s1, char const *set)
 		return (0);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		trim_l;
 	int		trim_r;

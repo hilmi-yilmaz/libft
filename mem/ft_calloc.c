@@ -6,7 +6,7 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 14:39:08 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/03/09 11:45:07 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/10 12:49:22 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (count == 0 || size == 0)
 	{
-		ptr = (unsigned char*)malloc(sizeof(char) * 1);
+		ptr = (unsigned char *)malloc(sizeof(char) * 1);
 		if (ptr == NULL)
 			return (NULL);
 		*ptr = '\0';
 		return (ptr);
 	}
-	ptr = (unsigned char*)malloc(count * size);
+	ptr = (unsigned char *)malloc(count * size);
 	if (ptr == NULL)
 		return (NULL);
 	ft_bzero(ptr, count * size);

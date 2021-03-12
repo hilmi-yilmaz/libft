@@ -6,14 +6,14 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/17 17:58:32 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/03/09 11:48:12 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/10 13:00:10 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include <stdlib.h>
 
-static int			split_count(char *s, char c)
+static int	split_count(char *s, char c)
 {
 	int	i;
 	int	count;
@@ -29,9 +29,9 @@ static int			split_count(char *s, char c)
 	return (count);
 }
 
-static int			skip_delims(char *s, char c)
+static int	skip_delims(char *s, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (*(s + i) == c)
@@ -39,9 +39,9 @@ static int			skip_delims(char *s, char c)
 	return (i);
 }
 
-static char			**free_array(char **array, int i)
+static char	**free_array(char **array, int i)
 {
-	int c;
+	int	c;
 
 	c = 0;
 	while (c < i)
@@ -53,9 +53,9 @@ static char			**free_array(char **array, int i)
 	return (NULL);
 }
 
-static char			**fill_array(char **array, char *s, char c, int elements)
+static char	**fill_array(char **array, char *s, char c, int elements)
 {
-	int i;
+	int	i;
 	int	len_word;
 
 	i = 0;
@@ -76,7 +76,7 @@ static char			**fill_array(char **array, char *s, char c, int elements)
 	return (array);
 }
 
-char				**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		elements;
 	char	**array;
@@ -84,9 +84,9 @@ char				**ft_split(char const *s, char c)
 
 	if (s == NULL)
 		return (NULL);
-	typecasted_s = (char*)s;
+	typecasted_s = (char *)s;
 	elements = split_count(typecasted_s, c) + 1;
-	array = (char**)malloc(sizeof(char*) * elements);
+	array = (char **)malloc(sizeof(char *) * elements);
 	if (array == NULL)
 		return (NULL);
 	array = fill_array(array, typecasted_s, c, elements);

@@ -6,7 +6,7 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 13:01:02 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/03/09 11:48:12 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/10 13:07:16 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	max_len_sub = ft_strlen(s + start);
 	if (len >= max_len_sub)
 		len = max_len_sub;
-	sub = (char*)malloc(len + 1);
+	sub = (char *)malloc(len + 1);
 	if (sub == NULL)
 		return (NULL);
 	while (i < len)

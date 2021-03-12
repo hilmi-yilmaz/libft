@@ -6,7 +6,7 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 15:37:08 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/03/09 11:45:18 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/10 12:49:37 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t				i;
-	const unsigned char *ptr_s;
+	const unsigned char	*ptr_s;
 
 	i = 0;
 	ptr_s = s;

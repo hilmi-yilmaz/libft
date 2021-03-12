@@ -6,17 +6,17 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 13:25:31 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/03/09 11:48:12 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/10 12:53:28 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "../libft.h"
 
-static int		len_nb(int n)
+static int	len_nb(int n)
 {
-	int i;
-	int nb;
+	int	i;
+	int	nb;
 
 	i = 0;
 	nb = n;
@@ -36,9 +36,9 @@ static int		len_nb(int n)
 	}
 }
 
-static int		power(int base, int pow)
+static int	power(int base, int pow)
 {
-	int result;
+	int	result;
 
 	result = 1;
 	while (pow != 0)
@@ -49,7 +49,7 @@ static int		power(int base, int pow)
 	return (result);
 }
 
-static char		*operations_for_negative(char *n_str, int *n, int *i)
+static char	*operations_for_negative(char *n_str, int *n, int *i)
 {
 	if (*n < 0)
 	{
@@ -62,13 +62,13 @@ static char		*operations_for_negative(char *n_str, int *n, int *i)
 	return (n_str);
 }
 
-static char		*lowest_int(char *str)
+static char	*lowest_int(char *str)
 {
 	char	*n_str;
 	int		i;
 
 	i = 0;
-	n_str = (char*)malloc(sizeof(char) * 12);
+	n_str = (char *)malloc(sizeof(char) * 12);
 	if (n_str == NULL)
 		return (NULL);
 	while (i < 11)
@@ -80,7 +80,7 @@ static char		*lowest_int(char *str)
 	return (n_str);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int		i;
 	int		len;
@@ -90,7 +90,7 @@ char			*ft_itoa(int n)
 	if (n == -2147483648)
 		return (lowest_int("-2147483648"));
 	len = len_nb(n);
-	n_str = (char*)malloc(sizeof(char) * (len + 1));
+	n_str = (char *)malloc(sizeof(char) * (len + 1));
 	if (n_str == NULL)
 		return (NULL);
 	n_str = operations_for_negative(n_str, &n, &i);

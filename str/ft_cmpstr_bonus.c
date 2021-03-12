@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/10 17:49:26 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/03/09 11:48:12 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/10 12:58:06 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 **		(int)		1 if strings are equal, 0 if not.
 */
 
-int		ft_cmpstr(char *s1, char *s2)
+int	ft_cmpstr(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	s1_len;

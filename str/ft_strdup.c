@@ -6,7 +6,7 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 15:16:24 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/03/09 11:48:12 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/10 13:02:02 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(const char *s1)
 
 	i = 0;
 	len_s1 = ft_strlen(s1);
-	copy = (char*)malloc((len_s1 + 1) * sizeof(char));
+	copy = (char *)malloc((len_s1 + 1) * sizeof(char));
 	if (copy == NULL)
 		return (NULL);
 	while (i < len_s1)

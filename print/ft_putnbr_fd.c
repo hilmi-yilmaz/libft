@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 19:52:34 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/07 20:15:14 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/10 12:55:18 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	len_nb(int n)
 {
-	int i;
-	int nb;
+	int	i;
+	int	nb;
 
 	i = 0;
 	nb = n;
@@ -32,7 +32,7 @@ static int	len_nb(int n)
 
 static int	power(int base, int pow)
 {
-	int result;
+	int	result;
 
 	result = 1;
 	while (pow != 0)
@@ -56,7 +56,7 @@ static int	is_negative(int n, int fd)
 	}
 }
 
-void		ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	int		i;
 	int		len;

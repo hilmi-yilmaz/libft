@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/30 12:51:30 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/03/09 11:48:12 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/10 13:06:33 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static char	*find_little(const char *big, const char *little,
 					break ;
 			}
 			if (j == len_little)
-				return ((char*)(big + i));
+				return ((char *)(big + i));
 		}
 		j = 0;
 		i++;
@@ -40,7 +40,7 @@ static char	*find_little(const char *big, const char *little,
 	return (NULL);
 }
 
-char		*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	len_little;
 	char	*result;

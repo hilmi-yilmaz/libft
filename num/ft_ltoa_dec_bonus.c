@@ -6,14 +6,14 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/07 13:21:28 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/03/09 11:48:12 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/10 12:53:58 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "../libft.h"
 
-static int		len_nb(long n)
+static int	len_nb(long n)
 {
 	int		i;
 	long	nb;
@@ -31,7 +31,7 @@ static int		len_nb(long n)
 		return (i);
 }
 
-static long		power(int base, int pow)
+static long	power(int base, int pow)
 {
 	long	result;
 
@@ -44,7 +44,7 @@ static long		power(int base, int pow)
 	return (result);
 }
 
-char			*ft_ltoa_dec(long n)
+char	*ft_ltoa_dec(long n)
 {
 	int		i;
 	int		len;
@@ -53,7 +53,7 @@ char			*ft_ltoa_dec(long n)
 
 	i = 0;
 	len = len_nb(n);
-	n_str = (char*)malloc(sizeof(char) * (len + 1));
+	n_str = (char *)malloc(sizeof(char) * (len + 1));
 	if (n_str == NULL)
 		return (NULL);
 	while (i < len)

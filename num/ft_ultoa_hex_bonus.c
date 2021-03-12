@@ -6,14 +6,14 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 13:25:31 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/03/09 11:48:12 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/10 12:54:35 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "../libft.h"
 
-static int				len_nb(unsigned long n)
+static int	len_nb(unsigned long n)
 {
 	int		i;
 	long	nb;
@@ -44,7 +44,7 @@ static unsigned long	power(int base, int pow)
 	return (result);
 }
 
-char					*ft_ultoa_hex(unsigned long n)
+char	*ft_ultoa_hex(unsigned long n)
 {
 	int				i;
 	int				len;
@@ -53,7 +53,7 @@ char					*ft_ultoa_hex(unsigned long n)
 
 	i = 0;
 	len = len_nb(n);
-	n_str = (char*)malloc(sizeof(char) * (len + 1));
+	n_str = (char *)malloc(sizeof(char) * (len + 1));
 	if (n_str == NULL)
 		return (NULL);
 	while (i < len)

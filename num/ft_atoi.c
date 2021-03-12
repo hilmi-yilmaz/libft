@@ -6,14 +6,14 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/31 10:24:30 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2020/11/17 15:33:46 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/10 12:52:33 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-static char		*skip_spaces(char *str, int *sign)
+static char	*skip_spaces(char *str, int *sign)
 {
-	int j;
-	int count;
+	int	j;
+	int	count;
 
 	j = 0;
 	count = 0;
@@ -39,9 +39,9 @@ static char		*skip_spaces(char *str, int *sign)
 	return (str + count + j);
 }
 
-static int		power(int base, int pow)
+static int	power(int base, int pow)
 {
-	int result;
+	int	result;
 
 	result = 1;
 	while (pow != 0)
@@ -52,9 +52,9 @@ static int		power(int base, int pow)
 	return (result);
 }
 
-static int		count_digits(char *str)
+static int	count_digits(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (*(str + i) >= '0' && *(str + i) <= '9')
@@ -62,12 +62,12 @@ static int		count_digits(char *str)
 	return (i);
 }
 
-static int		str_to_int(char *str)
+static int	str_to_int(char *str)
 {
-	int i;
-	int digit;
-	int result;
-	int digits_amount;
+	int	i;
+	int	digit;
+	int	result;
+	int	digits_amount;
 
 	i = 0;
 	result = 0;
@@ -82,7 +82,7 @@ static int		str_to_int(char *str)
 	return (result);
 }
 
-int				ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	char	*str;
 	int		sign;
@@ -91,7 +91,7 @@ int				ft_atoi(const char *nptr)
 	if (*nptr == '\0')
 		return (0);
 	sign = 0;
-	str = (char*)nptr;
+	str = (char *)nptr;
 	str = skip_spaces(str, &sign);
 	result = str_to_int(str) * sign;
 	return (result);

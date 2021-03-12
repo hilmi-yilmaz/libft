@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/08 18:13:02 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/01/08 18:13:08 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/10 12:54:16 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 **		(int)	i: length of the number
 */
 
-int		ft_nblen(long nb, int base)
+int	ft_nblen(long nb, int base)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (nb == 0)

@@ -93,7 +93,7 @@ SRC = 	$(SRC_MEM:%=$(DIR_MEM)%) \
 		$(SRC_NUM:%=$(DIR_NUM)%) \
 		$(SRC_CHAR:%=$(DIR_CHAR)%) \
 		$(SRC_PRINT:%=$(DIR_PRINT)%) \
-		$(SRC_LLIST:%=$(DIR_LLIST)%) \
+		$(SRC_LLIST:%=$(DIR_LLIST)%)
 
 DIR_OBJ = obj/
 OBJ = 	$(OBJ_MEM:%=$(DIR_OBJ)%) \
@@ -106,23 +106,16 @@ OBJ = 	$(OBJ_MEM:%=$(DIR_OBJ)%) \
 # Set the VPATH variable
 VPATH = $(DIR_MEM):$(DIR_STR):$(DIR_NUM):$(DIR_CHAR):$(DIR_PRINT):$(DIR_LLIST)
 
-# .PHONY: print_vars
-
-# print_vars:
-# 	@echo $(OBJ)
-# 	@echo ""
-# 	@echo $(SRC)
-
 all: $(DIR_OBJ) $(NAME)
+
+$(DIR_OBJ):
+	mkdir $@
 
 $(NAME): $(OBJ)
 	ar cr $@ $^
 
 $(DIR_OBJ)%.o: %.c $(HEADER_FILE)
 	$(CC) $(CFLAGS) -c $< -o $@
-
-$(DIR_OBJ):
-	mkdir $@
 
 clean:
 	rm -rdf $(DIR_OBJ)
