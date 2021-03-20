@@ -6,7 +6,7 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/02 17:08:31 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/03/10 18:00:41 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/20 13:59:45 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	get_next_line(int fd, char **line)
 	set_values(buff, &flag, &size);
 	while (flag == 0)
 	{
-		if (ft_strchr(re[fd].rest + re[fd].i, '\n') == 0)
+		if (ft_strchr_mod(re[fd].rest + re[fd].i, '\n') == 0)
 			size = read(fd, buff, BUFFER_SIZE);
 		if (size == -1)
 			return (-1);
@@ -74,8 +74,8 @@ char	*create(char *line, char *buff, t_remains *re)
 	int		size;
 	char	*array;
 
-	size = ft_strlen(line, '\0') + ft_strlen(buff, '\n') \
-			 + ft_strlen(re->rest + re->i, '\n');
+	size = ft_strlen_mod(line, '\0') + ft_strlen_mod(buff, '\n') \
+			 + ft_strlen_mod(re->rest + re->i, '\n');
 	array = (char *)malloc(sizeof(char) * size + 1);
 	if (array == NULL)
 		return (NULL);
@@ -125,8 +125,8 @@ int	rest_to_line(char *line, char *buff, t_remains *re, int flag)
 	int	len_line;
 
 	i = 0;
-	flag = ft_strchr(buff, '\n') + ft_strchr(re->rest + re->i, '\n');
-	len_line = ft_strlen(line, '\0');
+	flag = ft_strchr_mod(buff, '\n') + ft_strchr_mod(re->rest + re->i, '\n');
+	len_line = ft_strlen_mod(line, '\0');
 	while (i < BUFFER_SIZE)
 	{
 		if (*(re->rest + re->i + i) == '\n')
@@ -161,7 +161,7 @@ void	buff_to_line_and_rest(char *line, char *buff, t_remains *re)
 
 	i = 0;
 	j = 0;
-	len_line = ft_strlen(line, '\0');
+	len_line = ft_strlen_mod(line, '\0');
 	while (*(buff + i) != '\0' && *(buff + i) != '\n')
 	{
 		*(line + len_line + i) = *(buff + i);

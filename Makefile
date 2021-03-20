@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
-HEADER_FILE = libft.h
+HEADER_FILES = libft.h ./other/get_next_line_bonus.h
 
 # Memory source and object files
 DIR_MEM = mem/
@@ -87,13 +87,22 @@ SRC_LLIST = ft_lstnew.c \
 
 OBJ_LLIST = $(SRC_LLIST:.c=.o)
 
+# Other source and object files
+DIR_OTHER = other/
+
+SRC_OTHER = get_next_line_bonus.c \
+			get_next_line_utils_bonus.c
+
+OBJ_OTHER = $(SRC_OTHER:.c=.o)
+
 # Combine all source and object files
 SRC = 	$(SRC_MEM:%=$(DIR_MEM)%) \
 		$(SRC_STR:%=$(DIR_STR)%) \
 		$(SRC_NUM:%=$(DIR_NUM)%) \
 		$(SRC_CHAR:%=$(DIR_CHAR)%) \
 		$(SRC_PRINT:%=$(DIR_PRINT)%) \
-		$(SRC_LLIST:%=$(DIR_LLIST)%)
+		$(SRC_LLIST:%=$(DIR_LLIST)%) \
+		$(SRC_OTHER:%=$(DIR_OTHER)%)
 
 DIR_OBJ = obj/
 OBJ = 	$(OBJ_MEM:%=$(DIR_OBJ)%) \
@@ -101,10 +110,11 @@ OBJ = 	$(OBJ_MEM:%=$(DIR_OBJ)%) \
 		$(OBJ_NUM:%=$(DIR_OBJ)%) \
 		$(OBJ_CHAR:%=$(DIR_OBJ)%) \
 		$(OBJ_PRINT:%=$(DIR_OBJ)%) \
-		$(OBJ_LLIST:%=$(DIR_OBJ)%)
+		$(OBJ_LLIST:%=$(DIR_OBJ)%) \
+		$(OBJ_OTHER:%=$(DIR_OBJ)%)
 
 # Set the VPATH variable
-VPATH = $(DIR_MEM):$(DIR_STR):$(DIR_NUM):$(DIR_CHAR):$(DIR_PRINT):$(DIR_LLIST)
+VPATH = $(DIR_MEM):$(DIR_STR):$(DIR_NUM):$(DIR_CHAR):$(DIR_PRINT):$(DIR_LLIST):$(DIR_OTHER)
 
 all: $(DIR_OBJ) $(NAME)
 
@@ -114,7 +124,7 @@ $(DIR_OBJ):
 $(NAME): $(OBJ)
 	ar cr $@ $^
 
-$(DIR_OBJ)%.o: %.c $(HEADER_FILE)
+$(DIR_OBJ)%.o: %.c $(HEADER_FILES)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

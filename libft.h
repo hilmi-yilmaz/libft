@@ -6,13 +6,14 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 17:07:34 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/03/10 13:13:26 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/20 13:50:23 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stddef.h>
+# include "./other/get_next_line_bonus.h"
 
 typedef struct s_list
 {

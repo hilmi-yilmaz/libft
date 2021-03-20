@@ -6,18 +6,19 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/02 17:08:54 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/03/10 18:01:54 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/03/20 14:01:16 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "get_next_line_bonus.h"
 
 /*
 ** The ft_strchr function searches for the character c in the string s.
 ** If found, it returns 1, else returns 0.
 */
 
-int	ft_strchr(char *s, int c)
+int	ft_strchr_mod(char *s, int c)
 {
 	int	i;
 
@@ -38,7 +39,7 @@ int	ft_strchr(char *s, int c)
 ** It string points to NULL, the length is 0.
 */
 
-int	ft_strlen(char *s, int c)
+int	ft_strlen_mod(char *s, int c)
 {
 	size_t	i;
 
