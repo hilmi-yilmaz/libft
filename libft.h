@@ -6,7 +6,7 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 17:07:34 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/10/06 20:08:39 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/10/06 20:14:54 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char				*ft_ultoa_hex(unsigned long n);
 char				*ft_ltoa_dec(long n);
 int					ft_nblen(long nb, int base);
 int					ft_cmpstr(char *s1, char *s2);
-int					error_malloc(unsigned int bytes);
+void				*error_malloc(unsigned int bytes);
 int					ft_str_arr_len(char **arr);
 
 #endif
