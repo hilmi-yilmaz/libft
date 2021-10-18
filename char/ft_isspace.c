@@ -6,14 +6,14 @@
 /*   By: hyilmaz <hyilmaz@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/10/18 09:09:29 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/10/18 09:15:28 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/10/18 09:28:35 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isspace(int c)
+int	ft_isspace(int c)
 {
-    if (c == '\f' || c == '\n' || c == '\r' || c == '\t' || \
+	if (c == '\f' || c == '\n' || c == '\r' || c == '\t' || \
 		c == '\v' || c == ' ')
-        return (1);
-    return (0);
+		return (1);
+	return (0);
 }
