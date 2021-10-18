@@ -59,7 +59,8 @@ SRC_CHAR =  ft_isalpha.c \
 			ft_isascii.c \
 			ft_isprint.c \
 			ft_toupper.c \
-			ft_tolower.c
+			ft_tolower.c \
+			ft_isspace.c
 
 OBJ_CHAR = $(SRC_CHAR:.c=.o)
 
