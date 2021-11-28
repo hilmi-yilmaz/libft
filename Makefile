@@ -60,6 +60,7 @@ SRC_CHAR =  ft_isalpha.c \
 			ft_toupper.c \
 			ft_tolower.c \
 			ft_isspace.c \
+			skip_chr_func_pointer.c \
 			skip_chr.c
 
 OBJ_CHAR = $(SRC_CHAR:.c=.o)

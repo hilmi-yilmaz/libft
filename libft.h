@@ -6,7 +6,7 @@
 /*   By: hyilmaz <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 17:07:34 by hyilmaz       #+#    #+#                 */
-/*   Updated: 2021/10/18 09:32:40 by hyilmaz       ########   odam.nl         */
+/*   Updated: 2021/11/28 18:35:41 by hyilmaz       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ int					ft_nblen(long nb, int base);
 int					ft_cmpstr(char *s1, char *s2);
 void				*error_malloc(unsigned int bytes);
 int					ft_str_arr_len(char **arr);
-int					skip_chr(char *str, int (func)(int));
+int					skip_chr_func_pointer(char *str, int (func)(int));
+int					skip_chr(char *str, int c);
 int					ft_isspace(int c);
 
 #endif
